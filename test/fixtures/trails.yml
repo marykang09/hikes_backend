@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  summary: MyString
+  difficulty: MyString
+  location: MyString
+  url: MyString
+  img_sq_small: MyString
+  img_small: MyString
+  img_small_med: MyString
+  img_medium: MyString
+  length: MyString
+  ascent: MyString
+  descent: MyString
+  trail_api_id: 1
+  condition_status: MyString
+  condition_details: MyString
+
+two:
+  name: MyString
+  type: 
+  summary: MyString
+  difficulty: MyString
+  location: MyString
+  url: MyString
+  img_sq_small: MyString
+  img_small: MyString
+  img_small_med: MyString
+  img_medium: MyString
+  length: MyString
+  ascent: MyString
+  descent: MyString
+  trail_api_id: 1
+  condition_status: MyString
+  condition_details: MyString
