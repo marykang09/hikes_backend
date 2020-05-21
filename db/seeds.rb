@@ -25,13 +25,13 @@ trails_array.each do |trail|
         difficulty: trail["difficulty"],
         location: trail["location"],
         url: trail["url"],
-        img_sq_small: trail["img_sq_small"],
-        img_small: trail["img_small"],
-        img_small_med: trail["img_small_med"],
-        img_medium: trail["img_medium"],
-        trail_api_id: trail["trail_api_id"],
-        condition_status: trail["condition_status"],
-        condition_details: trail["condition_details"]
+        img_sq_small: trail["imgSqSmall"],
+        img_small: trail["imgSmall"],
+        img_small_med: trail["imgSmallMed"],
+        img_medium: trail["imgMedium"],
+        trail_api_id: trail["id"],
+        condition_status: trail["conditionStatus"],
+        condition_details: trail["conditionDetails"]
     )
 end
 
