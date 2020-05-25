@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_162017) do
     t.integer "trail_api_id"
     t.string "condition_status"
     t.string "condition_details"
+    t.float "longitude"
+    t.float "latitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_162017) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
+    t.string "password_digest"
     t.integer "outdoorsiness_scale"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

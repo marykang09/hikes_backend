@@ -31,12 +31,14 @@ trails_array.each do |trail|
         img_medium: trail["imgMedium"],
         trail_api_id: trail["id"],
         condition_status: trail["conditionStatus"],
-        condition_details: trail["conditionDetails"]
+        condition_details: trail["conditionDetails"],
+        longitude: trail["longitude"],
+        latitude: trail["latitude"]
     )
 end
 
-mary = User.create(username: "outdoorsyChick1", first_name: "Mary", last_name: "Kang", outdoorsiness_scale: 5)
-linds = User.create(username: "outdoorsyChick2", first_name: "Lindsay", last_name: "Montgomery", outdoorsiness_scale: 4)
+mary = User.create(username: "outdoorsyChick1", password: "password", first_name: "Mary", last_name: "Kang", outdoorsiness_scale: 5)
+linds = User.create(username: "outdoorsyChick2", password: "password", first_name: "Lindsay", last_name: "Montgomery", outdoorsiness_scale: 4)
 
 hike1 = Hike.create(user: mary, trail: Trail.all.last, completed: true, rating: 5, favorite: true)
 hike2 = Hike.create(user: linds, trail: Trail.all.first, completed: false)

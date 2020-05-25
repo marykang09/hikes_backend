@@ -17,7 +17,8 @@ class CreateTrails < ActiveRecord::Migration[6.0]
       t.integer :trail_api_id
       t.string :condition_status
       t.string :condition_details
-
+      t.float :longitude
+      t.float :latitude
       t.timestamps
     end
   end
