@@ -6,6 +6,14 @@ class HikesController < ApplicationController
         }})
     end
 
+    def update
+        hike = Hike.find(params[:id])
+        hike.update(hike_params)
+        render json: hike.as_json(include: {trail: {
+            only: [:name, :location, :img_medium, :id]
+        }})
+    end
+
 
     private
 

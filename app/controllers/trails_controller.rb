@@ -4,5 +4,5 @@ class TrailsController < ApplicationController
         render json: Trail.all
     end
 
-
+ 
 end
