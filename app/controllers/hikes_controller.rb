@@ -6,7 +6,7 @@ class HikesController < ApplicationController
         }})
     end
 
-    
+
     private
 
     def hike_params
