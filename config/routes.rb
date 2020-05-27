@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   post '/login', to: 'auth#create'
   # post '/users/:id/hikes', to: 'users#create_hike'
+  get '/users/decode_token', to: 'users#decode_token'
   resources :hikes
   resources :users
   resources :trails
