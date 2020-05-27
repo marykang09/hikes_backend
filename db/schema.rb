@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_162017) do
   create_table "hikes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "trail_id", null: false
-    t.boolean "completed"
-    t.boolean "favorite"
+    t.boolean "completed", default: false
+    t.boolean "favorite", default: false
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
