@@ -14,6 +14,10 @@ class HikesController < ApplicationController
         }})
     end
 
+    def destroy
+        hike= Hike.find(params[:id])
+        hike.destroy
+    end
 
     private
 
