@@ -18,12 +18,26 @@ co_result = JSON.parse(co_result)["trails"]
 yosemite_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=37.7326&lon=-119.6086&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
 yosemite_result = JSON.parse(yosemite_result)["trails"]
 
-
 mo_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=37.596824&lon=-91.838940&key=200766398-4923424b5e4da02910173b9c11be75c6"
 mo_result = JSON.parse(mo_result)["trails"]
 
-dc_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=38.813162&lon=-76.995952&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
-dc_result = JSON.parse(dc_result)["trails"]
+yellowstone_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=44.443830&lon=-110.800901&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+yellowstone_result = JSON.parse(yellowstone_result)["trails"]
+
+teton_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=43.8536&lon=-110.6314&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+teton_result = JSON.parse(teton_result)["trails"]
+
+grandcanyon_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=36.1070&lon=-112.1130&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+grandcanyon_result = JSON.parse(grandcanyon_result)["trails"]
+
+arches_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=38.7331&lon=-109.5925&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+arches_result = JSON.parse(arches_result)["trails"]
+
+smokies_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=35.6532&lon=-83.5070&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+smokies_result = JSON.parse(smokies_result)["trails"]
+
+zion_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=37.317207&lon=-113.022537&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+zion_result = JSON.parse(zion_result)["trails"]
 
 catskill_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=42.408810&lon=-74.617889&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
 catskill_result = JSON.parse(catskill_result)["trails"]
@@ -34,7 +48,10 @@ boise_result = JSON.parse(boise_result)["trails"]
 seattle_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=47.547799&lon=-122.335884&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
 seattle_result = JSON.parse(seattle_result)["trails"]
 
-trails_array = co_result + yosemite_result + mo_result + dc_result + catskill_result + boise_result + seattle_result
+jacksonhole_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=43.582767&lon=-110.821999&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+jacksonhole_result = JSON.parse(jacksonhole_result)["trails"]
+
+trails_array = co_result + yosemite_result + mo_result + yellowstone_result + teton_result + grandcanyon_result + arches_result + smokies_result + zion_result + catskill_result + boise_result + seattle_result + jacksonhole_result
 trails_array.each do |trail|
     Trail.create(
         name: trail["name"],
