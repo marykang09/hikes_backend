@@ -11,10 +11,30 @@ Trail.destroy_all
 User.destroy_all
 Hike.destroy_all
 
-api_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
 
-trails_array = JSON.parse(api_result)["trails"]
+co_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+co_result = JSON.parse(co_result)["trails"]
 
+yosemite_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=37.7326&lon=-119.6086&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+yosemite_result = JSON.parse(yosemite_result)["trails"]
+
+
+mo_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=37.596824&lon=-91.838940&key=200766398-4923424b5e4da02910173b9c11be75c6"
+mo_result = JSON.parse(mo_result)["trails"]
+
+dc_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=38.813162&lon=-76.995952&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+dc_result = JSON.parse(dc_result)["trails"]
+
+catskill_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=42.408810&lon=-74.617889&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+catskill_result = JSON.parse(catskill_result)["trails"]
+
+boise_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=45.584251&lon=-115.297593&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+boise_result = JSON.parse(boise_result)["trails"]
+
+seattle_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=47.547799&lon=-122.335884&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
+seattle_result = JSON.parse(seattle_result)["trails"]
+
+trails_array = co_result + yosemite_result + mo_result + dc_result + catskill_result + boise_result + seattle_result
 trails_array.each do |trail|
     Trail.create(
         name: trail["name"],
@@ -37,6 +57,7 @@ trails_array.each do |trail|
         latitude: trail["latitude"]
     )
 end
+
 
 mary = User.create(username: "outdoorsyChick1", password: "password", first_name: "Mary", last_name: "Kang", outdoorsiness_scale: 5)
 linds = User.create(username: "outdoorsyChick2", password: "password", first_name: "Lindsay", last_name: "Montgomery", outdoorsiness_scale: 4)
