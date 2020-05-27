@@ -9,6 +9,7 @@ require 'rest-client'
 
 Trail.destroy_all
 User.destroy_all
+Hike.destroy_all
 
 api_result = RestClient.get "https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&key=200766398-4923424b5e4da02910173b9c11be75c6"
 
