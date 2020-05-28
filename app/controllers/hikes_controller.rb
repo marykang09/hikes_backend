@@ -2,7 +2,7 @@ class HikesController < ApplicationController
     def create
         hike = Hike.create(hike_params)
         render json: hike.as_json(include: {trail: {
-            only: [:name, :location, :img_medium, :id]
+            only: [:name, :location, :img_medium, :id, :condition_status]
         }})
     end
 
@@ -10,7 +10,7 @@ class HikesController < ApplicationController
         hike = Hike.find(params[:id])
         hike.update(hike_params)
         render json: hike.as_json(include: {trail: {
-            only: [:name, :location, :img_medium, :id]
+            only: [:name, :location, :img_medium, :id, :condition_status]
         }})
     end
 
