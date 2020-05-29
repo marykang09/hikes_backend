@@ -11,6 +11,12 @@ class UsersController < ApplicationController
        
     end
 
+    def index
+        users = User.find_all
+        render json: users
+    end
+
+
     def create
         user = User.create(user_params)
         user.update(password: params[:password])
