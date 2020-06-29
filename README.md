@@ -31,22 +31,3 @@ Your application.yml file should look something like this:
 
 9. Clone down the [getTrails Frontend Repo](https://github.com/marykang09/hikes_frontend) and follow the frontend Readme instructions! 
 
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# hikes_backend
