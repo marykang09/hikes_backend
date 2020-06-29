@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
     def show
         user = User.find(params[:id])
-         render json: user.as_json(include: {hikes: {
+        render json: user.as_json(include: {hikes: {
                                         include: {trail: {
                                             only: [:name, :location, :img_medium, :id, :condition_status]}},
                                         except: [:created_at, :updated_at]
@@ -12,8 +12,7 @@ class UsersController < ApplicationController
     end
 
     def index
-        users = User.find_all
-        render json: users
+        render json: User.all
     end
 
 
