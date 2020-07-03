@@ -22,7 +22,11 @@ class UsersController < ApplicationController
         payload = {user_id: user.id}
         token = encode(payload)
         new_hash = {}
-        new_hash['user_data'] = user
+        new_hash['user_data'] = user.as_json(include: {hikes: {
+            include: {trail: {
+                only: [:name, :location, :img_medium, :id, :condition_status]}},
+            except: [:created_at, :updated_at]
+                }})
         new_hash["token"] = token
         render json: new_hash
     end
@@ -30,7 +34,11 @@ class UsersController < ApplicationController
     def decode_token
         token = request.headers["Authenticate"]
         user = User.find(decode(token)["user_id"])
-        render json: user
+        render json: user.as_json(include: {hikes: {
+            include: {trail: {
+                only: [:name, :location, :img_medium, :id, :condition_status]}},
+            except: [:created_at, :updated_at]
+                }})
     end
 
   private
