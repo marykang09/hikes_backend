@@ -84,6 +84,7 @@ hike1 = Hike.create(user: mary, trail: Trail.all.last, completed: true, rating: 
 hike2 = Hike.create(user: linds, trail: Trail.all.first, completed: false)
 hike3 = Hike.create(user: mary, trail: Trail.all.first, completed: false)
 
+comment = Comment.create(user: mary, trail: Trail.all.last, content: 'Amazing!')
 
 # api_result = RestClient::Request.execute(method: :get, 
 #                                             url: "https://hikingproject.com/data/get-trails", 

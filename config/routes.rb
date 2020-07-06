@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   post '/login', to: 'auth#create'
   get '/users/decode_token', to: 'users#decode_token'
   resources :hikes, only: [:create, :update, :destroy]
